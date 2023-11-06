@@ -1,0 +1,14 @@
+﻿  GameObject.cpp
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(12,53): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(12,46): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(13,29): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(13,26): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Casse-brique.vcxproj -> C:\Users\frichard\source\repos\KasBrik\x64\Debug\Casse-brique.exe
