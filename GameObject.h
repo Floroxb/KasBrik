@@ -3,15 +3,19 @@
 class gameObject
 {
 public:
-	int x;
-	int y;
-	int width;
-	int height;
-	char* type;
+	float x;
+	float y;
+	float newX;
+	float newY;
+	float width;
+	float height;
+	const char* type;
 	sf::RectangleShape oRectangle;
 	sf::CircleShape oCircle;
 
-	gameObject(int x, int y, int width, int height, char* type);
+	gameObject(float x, float y, float width, float height, const char* type);
 
-	void draw();
+	void draw(sf::RenderWindow* oWindow);
+
+	void move(float deltaTime, float xM, float yM);
 };

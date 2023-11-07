@@ -5,23 +5,20 @@ int main(int argc, char** argv)
 {
     
     //Création d'une fenêtre
-    sf::RenderWindow oWindow(sf::VideoMode(640, 480), "SFML");
+    sf::RenderWindow oWindow(sf::VideoMode(1800, 1000), "SFML");
 
-    //Création d'un cercle de radius 100
-    sf::CircleShape oCircle(100.f);
-    //A la position 0, 0
-    oCircle.setPosition(0.f, 0.f);
-    //Et de couleur verte
-    oCircle.setFillColor(sf::Color::Green);
+    gameObject test1(10, 25, 3, 69, "rectangle");
 
+    gameObject test2(100, 100, 25, 25, "cercle");
 
-    //Création d'un rectangle de taille 50, 50
-    sf::RectangleShape oRectangle(sf::Vector2f(50.f, 50.f));
-    //A la position 100, 100
-    oRectangle.setPosition(100.f, 100.f);
-    //Et de couleur rouge
-    oRectangle.setFillColor(sf::Color::Red);
+	bool movement = 0;
 
+    int xM = 0;
+    int yM = 0;
+    
+    sf::Clock oClock;
+	float deltaTime;
+    
     //GameLoop
     while (oWindow.isOpen())
     {
@@ -34,14 +31,25 @@ int main(int argc, char** argv)
         }
 
         //UPDATE
-
+		deltaTime = oClock.restart().asSeconds();
         //DRAW
         oWindow.clear();
 
-        oWindow.draw(oCircle);
-        oWindow.draw(oRectangle);
+        test1.draw(&oWindow);
+        test2.draw(&oWindow);
 
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) and movement == 0){
+            movement = 1;
+            xM = sf::Mouse::getPosition(oWindow).x;
+            yM = sf::Mouse::getPosition(oWindow).y;
+        }
+        
+        if (movement == 1){
+			test2.move(deltaTime, xM, yM);
+        }
         oWindow.display();
+
+        
     }
 
     return 0;
