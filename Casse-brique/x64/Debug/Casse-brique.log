@@ -1,0 +1,6 @@
+﻿  GameObject.cpp
+  main.cpp
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(48,29): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(48,25): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Génération de code en cours...
+  Casse-brique.vcxproj -> C:\Users\frichard\source\repos\KasBrik\x64\Debug\Casse-brique.exe
