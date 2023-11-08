@@ -47,7 +47,9 @@ void gameObject::move(float deltaTime, float xM, float yM)
 	}
 }
 
-void gameObject::collision(gameObject other) {
-
-	return (other.x <= x + width / 2 <= other.x + other.width and y == other.y + other.height) or (other.x <= x + width / 2 <= other.x + other.width and y + height == other.y) or (other.y <= y + height / 2 <= other.y + other.height and x + width == other.x) or (other.y <= y + height / 2 <= other.y + other.height and x == other.x + other.width);
+void gameObject::collision(gameObject* other)
+{
+	if ((other->x <= x + width / 2 <= other->x + other->width and y == other->y + other->height) or (other->x <= x + width / 2 <= other->x + other->width and y + height == other->y) or (other->y <= y + height / 2 <= other->y + other->height and x + width == other->x) or (other->y <= y + height / 2 <= other->y + other->height and x == other->x + other->width)){
+		delete other;
+	}
 }

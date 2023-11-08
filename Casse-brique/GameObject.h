@@ -19,7 +19,7 @@ public:
 
 	void move(float deltaTime, float xM, float yM);
 
-	void collision(gameObject other);
+	void collision(gameObject* other);
 
-	~gameObject();
+	void destroy();
 };

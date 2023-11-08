@@ -7,9 +7,9 @@ int main(int argc, char** argv)
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(800, 800), "SFML");
 
-    gameObject brick(400, 100, 50, 10, "rectangle");
+    gameObject* pbrick = new gameObject(400, 100, 50, 10, "rectangle");
 
-    gameObject ball(400, 750, 10, 10, "cercle");
+	gameObject* pball = new gameObject(400, 750, 10, 10, "cercle");
 
 	bool movement = 0;
 
@@ -35,8 +35,9 @@ int main(int argc, char** argv)
         //DRAW
         oWindow.clear();
 
-        brick.draw(&oWindow);
-        ball.draw(&oWindow);
+        pbrick->draw(&oWindow);
+        pball->draw(&oWindow);
+        pball->collision(pbrick);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) and movement == 0){
             movement = 1;
@@ -45,7 +46,7 @@ int main(int argc, char** argv)
         }
         
         if (movement == 1){
-			ball.move(deltaTime, xM, yM);
+			pball->move(deltaTime, xM, yM);
         }
         oWindow.display();
 
