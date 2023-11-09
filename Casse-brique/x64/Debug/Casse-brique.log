@@ -1,10 +1,4 @@
-﻿  GameObject.cpp
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,16): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,108): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,193): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,279): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-  main.cpp
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(49,31): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(49,27): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  Génération de code en cours...
+﻿  main.cpp
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(50,31): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(50,27): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   Casse-brique.vcxproj -> C:\Users\frichard\source\repos\KasBrik\x64\Debug\Casse-brique.exe

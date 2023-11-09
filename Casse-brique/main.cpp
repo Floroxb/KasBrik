@@ -35,9 +35,10 @@ int main(int argc, char** argv)
         //DRAW
         oWindow.clear();
 
-        pbrick->draw(&oWindow);
+        if (pbrick->exist == 1){
+			pbrick->draw(&oWindow);
+        }
         pball->draw(&oWindow);
-        pball->collision(pbrick);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) and movement == 0){
             movement = 1;
@@ -47,6 +48,10 @@ int main(int argc, char** argv)
         
         if (movement == 1){
 			pball->move(deltaTime, xM, yM);
+			if (pball->collision(pbrick) == 1 and pbrick->exist == 1) {
+                pbrick->exist = 0;
+			}
+            pball->windowCollision(&oWindow);
         }
         oWindow.display();
 

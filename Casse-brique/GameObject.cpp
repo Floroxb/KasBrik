@@ -11,6 +11,7 @@ gameObject::gameObject(float x, float y, float width, float height, const char* 
 	this->width = width;
 	this->height = height;
 	this->type = type;
+	this->exist = 1;
 
 	if (type == "rectangle") {
 		oRectangle.setSize(sf::Vector2f(width, height));
@@ -43,13 +44,32 @@ void gameObject::move(float deltaTime, float xM, float yM)
 	}
 
 	else if (type == "cercle") {
-		oCircle.setPosition(newX, newY);
+		oCircle.setPosition(newX, newY);					
 	}
 }
 
-void gameObject::collision(gameObject* other)
+bool isInside(int x, int min, int max)
 {
-	if ((other->x <= x + width / 2 <= other->x + other->width and y == other->y + other->height) or (other->x <= x + width / 2 <= other->x + other->width and y + height == other->y) or (other->y <= y + height / 2 <= other->y + other->height and x + width == other->x) or (other->y <= y + height / 2 <= other->y + other->height and x == other->x + other->width)){
-		delete other;
+	return x >= min and x <= max;
+}
+
+bool gameObject::collision(gameObject* other)
+{
+	return (isInside(newX + width / 2, other->newX, other->newX + other->width) and isInside(newY, other->newY, other->newY + other->height)) or (isInside(newX + width / 2, other->newX, other->newX + other->width) and isInside(newY + height, other->newY, other->newY + other->height)) or (isInside(newY + height / 2, other->newY, other->newY + other->height) and isInside(newX, other->newX, other->newX + other->width)) or (isInside(newY + height / 2, other->newY, other->newY + other->height) and isInside(newX + width, other->newX, other->newX + other->width));
+}
+
+void gameObject::windowCollision(sf::RenderWindow* window) 
+{	
+	if (newX - width/2 < 0) {
+		newX = width / 2;
+	}
+	else if (newX + width / 2 > window->getSize().x) {
+		newX = window->getSize().x - width / 2;
+	}
+	if (newY - width / 2 < 0) {
+		newY = width / 2;
+	}
+	else if (newY + width / 2 > window->getSize().y) {
+		newY = window->getSize().y - width / 2;
 	}
 }
