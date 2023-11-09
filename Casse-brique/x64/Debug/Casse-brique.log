@@ -1,10 +1,37 @@
 ﻿  GameObject.cpp
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,16): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,108): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,193): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(52,279): warning C4804: '<=' : utilisation risquée du type 'bool' dans l'opération
-  main.cpp
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(49,31): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(49,27): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  Génération de code en cours...
-  Casse-brique.vcxproj -> C:\Users\frichard\source\repos\KasBrik\x64\Debug\Casse-brique.exe
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,62): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,42): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,24): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,122): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,102): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,91): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,196): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,176): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,158): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,265): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,245): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,230): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,340): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,320): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,301): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,401): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,381): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,370): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,475): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,455): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,436): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,544): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,524): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(58,510): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,24): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,58): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,91): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,130): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,167): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,207): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,243): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(63,278): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(69,28): error C2065: 'window' : identificateur non déclaré
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(70,11): error C2065: 'window' : identificateur non déclaré
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(75,28): error C2065: 'window' : identificateur non déclaré
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\GameObject.cpp(76,11): error C2065: 'window' : identificateur non déclaré

@@ -1,4 +1,6 @@
 #include <SFML/Graphics.hpp>
+#include <math.h>
+#include <cstdlib>
 #include "GameObject.h"
 
 int main(int argc, char** argv)
@@ -15,6 +17,8 @@ int main(int argc, char** argv)
 
     int xM = 0;
     int yM = 0;
+	srand((unsigned int)time(0));
+
     
     sf::Clock oClock;
 	float deltaTime;
@@ -35,9 +39,10 @@ int main(int argc, char** argv)
         //DRAW
         oWindow.clear();
 
-        pbrick->draw(&oWindow);
+        if (pbrick->exist == 1){
+			pbrick->draw(&oWindow);
+        }
         pball->draw(&oWindow);
-        pball->collision(pbrick);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) and movement == 0){
             movement = 1;
@@ -47,6 +52,19 @@ int main(int argc, char** argv)
         
         if (movement == 1){
 			pball->move(deltaTime, xM, yM);
+			if (pball->collision(pbrick) == 1 and pbrick->exist == 1) {
+                pbrick->exist = 0;
+                pball->x = pball->newX;
+				pball->y = pball->newY;
+                xM = rand() % 801;
+                yM = rand() % 801;
+			}
+			else if (pball->windowCollision() == 1) {
+				pball->x = pball->newX;
+				pball->y = pball->newY;
+				xM = rand() % 801;
+				yM = rand() % 801;
+			}
         }
         oWindow.display();
 
