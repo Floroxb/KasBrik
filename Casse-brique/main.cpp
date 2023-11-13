@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <math.h>
-#include <cstdlib>
 #include "GameObject.h"
+#include "main.h"
 
 int main(int argc, char** argv)
 {
@@ -35,11 +35,12 @@ int main(int argc, char** argv)
         }
 
         //UPDATE
-		deltaTime = oClock.restart().asSeconds();
+		deltaTime = +
+            oClock.restart().asSeconds();
         //DRAW
         oWindow.clear();
 
-        if (pbrick->exist == 1){
+        if (pbrick != nullptr){
 			pbrick->draw(&oWindow);
         }
         pball->draw(&oWindow);
@@ -52,19 +53,37 @@ int main(int argc, char** argv)
         
         if (movement == 1){
 			pball->move(deltaTime, xM, yM);
-			if (pball->collision(pbrick) == 1 and pbrick->exist == 1) {
-                pbrick->exist = 0;
-                pball->x = pball->newX;
-				pball->y = pball->newY;
-                xM = rand() % 801;
-                yM = rand() % 801;
-			}
-			else if (pball->windowCollision() == 1) {
+            if (pbrick != nullptr) {
+                if (pball->collision(pbrick) == 'x') {
+                    delete pbrick;
+                    pbrick = nullptr;
+                    pball->x = pball->newX;
+                    pball->y = pball->newY;
+                    xM = -xM;
+                    yM = -yM;
+                }
+                else if (pball->collision(pbrick) == 'y') {
+					delete pbrick;
+					pbrick = nullptr;
+					pball->x = pball->newX;
+					pball->y = pball->newY;
+					xM = -xM;
+                    yM = -yM;
+				}
+            }
+            if (pball->windowCollision(&oWindow) == 'x') {
 				pball->x = pball->newX;
 				pball->y = pball->newY;
-				xM = rand() % 801;
-				yM = rand() % 801;
+				xM = -xM;
+                yM = -yM;
+            }
+			else if (pball->windowCollision(&oWindow) == 'y') {
+				pball->x = pball->newX;
+				pball->y = pball->newY;
+				xM = -xM;
+                yM = -yM;
 			}
+            
         }
         oWindow.display();
 

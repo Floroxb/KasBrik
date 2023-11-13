@@ -11,7 +11,7 @@ gameObject::gameObject(float x, float y, float width, float height, const char* 
 	this->width = width;
 	this->height = height;
 	this->type = type;
-	this->exist = 1;
+
 
 	if (type == "rectangle") {
 		oRectangle.setSize(sf::Vector2f(width, height));
@@ -48,12 +48,39 @@ void gameObject::move(float deltaTime, float xM, float yM)
 	}
 }
 
-bool isInside(int x, int min, int max)
+bool isInside(float x, float min, float max)
 {
 	return x >= min and x <= max;
 }
 
-bool gameObject::collision(gameObject* other)
+bool isOutside(float x, float min, float max)
 {
-	return (isInside(newX + width / 2, other->newX, other->newX + other->width) and isInside(newY, other->newY, other->newY + other->height)) or (isInside(newX + width / 2, other->newX, other->newX + other->width) and isInside(newY + height, other->newY, other->newY + other->height)) or (isInside(newY + height / 2, other->newY, other->newY + other->height) and isInside(newX, other->newX, other->newX + other->width)) or (isInside(newY + height / 2, other->newY, other->newY + other->height) and isInside(newX + width, other->newX, other->newX + other->width));
+	return !isInside(x, min, max);
+}
+
+char gameObject::collision(gameObject* other)
+{
+	bool colUp = isInside(newX + width / 2, other->newX, other->newX + other->width) and isInside(newY, other->newY, other->newY + other->height);
+	bool colDown = isInside(newX + width / 2, other->newX, other->newX + other->width) and isInside(newY + height, other->newY, other->newY + other->height);
+	bool colLeft = isInside(newY + height / 2, other->newY, other->newY + other->height) and isInside(newX, other->newX, other->newX + other->width);
+	bool colRight = isInside(newY + height / 2, other->newY, other->newY + other->height) and isInside(newX + width, other->newX, other->newX + other->width);
+	if (colUp or colDown){
+		return 'y';
+	}
+	else if (colLeft or colRight){
+		return 'x';
+	}
+}
+
+char gameObject::windowCollision(sf::RenderWindow* window)
+{
+	bool colUp = isInside(newX + width / 2, 0, 800) and newY <= 0;
+	bool colLeft = isInside(newY + height / 2, 0, 800) and isOutside(newX, 0, 800);
+	bool colRight = isInside(newY + height / 2, 0, 800) and isOutside(newX + width, 0, 800);
+	if (colUp){
+		return 'y';
+	}
+	else if (colLeft or colRight) {
+		return 'x';
+	}
 }

@@ -10,7 +10,6 @@ public:
 	float width;
 	float height;
 	const char* type;
-	bool exist;
 	sf::RectangleShape oRectangle;
 	sf::CircleShape oCircle;
 
@@ -20,5 +19,7 @@ public:
 
 	void move(float deltaTime, float xM, float yM);
 
-	bool collision(gameObject* other);
+	char collision(gameObject* other);
+
+	char windowCollision(sf::RenderWindow* window);
 };
