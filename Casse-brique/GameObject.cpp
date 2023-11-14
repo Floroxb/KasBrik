@@ -37,8 +37,8 @@ void gameObject::draw(sf::RenderWindow* oWindow)
 
 void gameObject::move(float deltaTime, float xM, float yM)
 {
-	newX += (xM-x)/sqrtf((xM - x) * (xM - x) + (yM - y) * (yM - y)) * deltaTime * 500;
-	newY += (yM-y)/ sqrtf((xM - x) * (xM - x) + (yM - y) * (yM - y)) * deltaTime * 500;
+	newX += xM * deltaTime * 500;
+	newY += yM * deltaTime * 500;
 	if (type == "rectangle") {
 		oRectangle.setPosition(newX, newY);
 	}
@@ -82,5 +82,5 @@ char gameObject::windowCollision(sf::RenderWindow* window)
 	}
 	else if (colLeft or colRight) {
 		return 'x';
-	}
+	} 
 }

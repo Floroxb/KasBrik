@@ -15,8 +15,8 @@ int main(int argc, char** argv)
 
 	bool movement = 0;
 
-    int xM = 0;
-    int yM = 0;
+    float xV = 0;
+    float yV = 0;
 	srand((unsigned int)time(0));
 
     
@@ -47,42 +47,53 @@ int main(int argc, char** argv)
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) and movement == 0){
             movement = 1;
-            xM = sf::Mouse::getPosition(oWindow).x;
-            yM = sf::Mouse::getPosition(oWindow).y;
+            float xM = sf::Mouse::getPosition(oWindow).x;
+            float yM = sf::Mouse::getPosition(oWindow).y;
+            xV = (xM - pball->x) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
+            yV = (yM - pball->y) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
         }
         
         if (movement == 1){
-			pball->move(deltaTime, xM, yM);
+			pball->move(deltaTime, xV, yV);
             if (pbrick != nullptr) {
                 if (pball->collision(pbrick) == 'x') {
                     delete pbrick;
                     pbrick = nullptr;
+                    float xM = pball->x;
+                    float yM = pball->y - 2 * yV;
                     pball->x = pball->newX;
                     pball->y = pball->newY;
-                    xM = -xM;
-                    yM = -yM;
+					xV = (xM - pball->x) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
+					yV = (yM - pball->y) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
                 }
                 else if (pball->collision(pbrick) == 'y') {
 					delete pbrick;
 					pbrick = nullptr;
+					float xM = pball->x - 2 * xV;
+					float yM = pball->y;
 					pball->x = pball->newX;
 					pball->y = pball->newY;
-					xM = -xM;
-                    yM = -yM;
+					xV = (xM - pball->x) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
+					yV = (yM - pball->y) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
 				}
             }
             if (pball->windowCollision(&oWindow) == 'x') {
+				float xM = pball->x;
+				float yM = pball->y - 2 * yV;
 				pball->x = pball->newX;
 				pball->y = pball->newY;
-				xM = -xM;
-                yM = -yM;
+				xV = (xM - pball->x) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
+				yV = (yM - pball->y) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
             }
 			else if (pball->windowCollision(&oWindow) == 'y') {
+				float xM = pball->x - 2 * xV;
+				float yM = pball->y;
 				pball->x = pball->newX;
 				pball->y = pball->newY;
-				xM = -xM;
-                yM = -yM;
+				xV = (xM - pball->x) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
+				yV = (yM - pball->y) / sqrtf((xM - pball->x) * (xM - pball->x) + (yM - pball->y) * (yM - pball->y));
 			}
+            
             
         }
         oWindow.display();
