@@ -9,11 +9,12 @@ public:
 	float newY;
 	float width;
 	float height;
-	const char* type;
-	sf::RectangleShape oRectangle;
-	sf::CircleShape oCircle;
+	sf::Shape* pShape;
 
-	gameObject(float x, float y, float width, float height, const char* type);
+
+	gameObject(float x, float y, float width, float height);
+
+	gameObject(float x, float y, float width);
 
 	void draw(sf::RenderWindow* oWindow);
 

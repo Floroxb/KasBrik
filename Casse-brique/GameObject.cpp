@@ -2,7 +2,7 @@
 #include <math.h>
 #include "GameObject.h"
 
-gameObject::gameObject(float x, float y, float width, float height, const char* type)
+gameObject::gameObject(float x, float y, float width, float height)
 {
 	this->x = x;
 	this->y = y;
@@ -10,42 +10,34 @@ gameObject::gameObject(float x, float y, float width, float height, const char* 
 	this->newY = y;
 	this->width = width;
 	this->height = height;
-	this->type = type;
+	this->pShape = pShape;
+	pShape = new sf::RectangleShape(sf::Vector2f(width, height));
+	pShape -> setPosition(x, y);
+}
 
-
-	if (type == "rectangle") {
-		oRectangle.setSize(sf::Vector2f(width, height));
-		oRectangle.setPosition(x, y);
-	}
-
-	else if (type == "cercle") {
-		oCircle.setRadius(width/2);
-		oCircle.setPosition(x, y);
-	}
+gameObject::gameObject(float x, float y, float width)
+{
+	this->x = x;
+	this->y = y;
+	this->newX = x;
+	this->newY = y;
+	this->width = width;
+	this->height = width;
+	pShape = new sf::CircleShape(width / 2);
+	pShape -> setPosition(x, y);
 }
 
 void gameObject::draw(sf::RenderWindow* oWindow)
 {
-	if (type == "rectangle") {
-		oWindow->draw(oRectangle);
-	}
-
-	else if (type == "cercle") {
-		oWindow->draw(oCircle);
-	}
+	oWindow->draw(*pShape);
 }
 
 void gameObject::move(float deltaTime, float xM, float yM)
 {
 	newX += xM * deltaTime * 500;
 	newY += yM * deltaTime * 500;
-	if (type == "rectangle") {
-		oRectangle.setPosition(newX, newY);
-	}
-
-	else if (type == "cercle") {
-		oCircle.setPosition(newX, newY);					
-	}
+	pShape -> setPosition(newX, newY);
+	pShape -> setPosition(newX, newY);	
 }
 
 bool isInside(float x, float min, float max)
@@ -75,6 +67,7 @@ char gameObject::collision(gameObject* other)
 char gameObject::windowCollision(sf::RenderWindow* window)
 {
 	bool colUp = isInside(newX + width / 2, 0, 800) and newY <= 0;
+	bool colDown = isInside(newX + width / 2, 0, 800) and newY + height >= 800;
 	bool colLeft = isInside(newY + height / 2, 0, 800) and isOutside(newX, 0, 800);
 	bool colRight = isInside(newY + height / 2, 0, 800) and isOutside(newX + width, 0, 800);
 	if (colUp){
@@ -83,4 +76,8 @@ char gameObject::windowCollision(sf::RenderWindow* window)
 	else if (colLeft or colRight) {
 		return 'x';
 	} 
+	else if (colDown) {
+		return 'd';
+	}
+
 }

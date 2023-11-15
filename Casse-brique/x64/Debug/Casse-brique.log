@@ -1,10 +1,10 @@
 ﻿  main.cpp
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(50,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(60,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(51,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(61,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
           with
           [
               T=int
