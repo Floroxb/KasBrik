@@ -1,12 +1,16 @@
 ﻿  main.cpp
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(60,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(130,23): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(138,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(61,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(139,22): warning C4244: 'initialisation' : conversion de 'T' en 'float', perte possible de données
           with
           [
               T=int
           ]
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(149,44): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(154,44): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\frichard\source\repos\KasBrik\Casse-brique\main.cpp(123,19): warning C4101: 'oEvent' : variable locale non référencée
   Casse-brique.vcxproj -> C:\Users\frichard\source\repos\KasBrik\x64\Debug\Casse-brique.exe

@@ -13,6 +13,8 @@ gameObject::gameObject(float x, float y, float width, float height)
 	this->pShape = pShape;
 	pShape = new sf::RectangleShape(sf::Vector2f(width, height));
 	pShape -> setPosition(x, y);
+	pShape->setOutlineColor(sf::Color(0, 0, 0));
+	pShape->setOutlineThickness(2);
 }
 
 gameObject::gameObject(float x, float y, float width)
@@ -38,6 +40,13 @@ void gameObject::move(float deltaTime, float xM, float yM)
 	newY += yM * deltaTime * 500;
 	pShape -> setPosition(newX, newY);
 	pShape -> setPosition(newX, newY);	
+}
+
+void gameObject::descend()
+{
+	newY = newY + 50;
+	pShape->setPosition(newX, newY);
+
 }
 
 bool isInside(float x, float min, float max)

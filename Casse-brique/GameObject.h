@@ -23,4 +23,6 @@ public:
 	char collision(gameObject* other);
 
 	char windowCollision(sf::RenderWindow* window);
+
+	void descend();
 };
